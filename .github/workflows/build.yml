@@ -50,15 +50,15 @@ jobs:
           echo "AWS_SECRET_ACCESS_KEY=${{ secrets.ARTIFACTS_PIPELINES_SECRET_KEY }}" >> $GITHUB_ENV
           echo "ARTIFACTS_BUCKET=${{ secrets.ARTIFACTS_S3 }}" >> $GITHUB_ENV
           if [ "${GITHUB_REF}" = "refs/heads/main" ]; then
-            echo "S3_PREFIX=${{ secrets.ECHOSTREAM_VERSION }}-dev" >> $GITHUB_ENV
+            echo "VERSION=${{ secrets.ECHOSTREAM_VERSION }}-dev" >> $GITHUB_ENV
           elif [[ "${GITHUB_REF}" =~ ^refs\/heads\/v([0-9])+\.([0-9])+ ]]; then
-            VERSION=`echo "${GITHUB_REF##*/v}" | cut -d'.' -f1-2`
-            echo "S3_PREFIX=$VERSION" >> $GITHUB_ENV
+            echo 'VERSION=`echo "${GITHUB_REF##*/v}" | cut -d'.' -f1-2`' >> $GITHUB_ENV
           else
             echo "REF: ${GITHUB_REF}"
             echo "Not a buildable branch. Exiting"
             exit 1
           fi
+          echo "S3_PREFIX=$VERSION" >> $GITHUB_ENV
           echo "REF: ${GITHUB_REF}"
       - name: Upload
         run: |
