@@ -7,7 +7,7 @@ echocore_zip = None
 with open("echocore.zip", "rb") as f:
     echocore_zip = f.read()
 
-layer_name = f'echocore-{environ["VERSION"]}'
+layer_name = f'echocore-{environ["VERSION"].replace(".", "_")}'
 echocore_arns = dict()
 for region_name in ("us-east-1", "us-east-2", "us-west-1", "us-west-2"):
     print(f"Publishing {layer_name} to {region_name}")
