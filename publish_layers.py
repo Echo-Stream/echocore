@@ -27,6 +27,14 @@ for region_name in ("us-east-1", "us-east-2", "us-west-1", "us-west-2"):
         StatementId="PublicAccess",
         VersionNumber=response["Version"],
     )
+    if response["Version"] != 1:
+        try:
+            lambda_client.delete_layer_version(
+                LayerName=response["LayerArn"],
+                VersionNumber=response["Version"]-1,
+            )
+        except Exception:
+            print(f'WARNING: Unable to delete version {response["Version"]} for {layer_name}')
     echocore_arns[region_name] = response["LayerVersionArn"]
 with open("echocore.json", "wt") as f:
     json.dump(echocore_arns, f, separators=(",", ":"))
