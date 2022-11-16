@@ -58,14 +58,16 @@ jobs:
             echo "Not a buildable branch. Exiting"
             exit 1
           fi
-          echo "S3_PREFIX=$VERSION" >> $GITHUB_ENV
+          echo "S3_PREFIX=`echo $VERSION`" >> $GITHUB_ENV
           echo "REF: ${GITHUB_REF}"
+          echo "S3_PREFIX: ${S3_PREFIX}"
+          echo "VERSION: ${VERSION}"
       - name: Upload
         run: |
           mkdir python
-          pip3.9 install --no-cache-dir -r requirements.txt -t python
+          pip3.9 install --no-cache-dir --disable-pip-version-check -r requirements.txt -t python
           zip -r echocore.zip python/
-          pip3.9 install boto3
+          pip3.9 install --disable-pip-version-check boto3
           python3.9 publish_layers.py
           aws s3 cp echocore.json s3://$ARTIFACTS_BUCKET/$S3_PREFIX/lambda/layer/ --sse
         if: ${{ success() }}
