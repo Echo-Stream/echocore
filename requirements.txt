@@ -21,7 +21,7 @@ Files.com==1.0.900
 idna==3.4
 jsonpickle==2.2.0
 lambda-pkg-resources==0.0.6
-mangum==0.16.0
+mangum==0.17.0
 multipledispatch==0.6.0
 pycdlib==1.13.0
 pydantic==1.10.2
