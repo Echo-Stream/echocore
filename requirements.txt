@@ -9,7 +9,7 @@ botocore==1.29.10
 Brotli==1.0.9
 cachetools==5.2.0
 certifi==2022.9.24
-charset-normalizer==2.1.1
+charset-normalizer==3.0.1
 dnspython==2.2.1
 dynamic-function-loader==0.0.3
 dynamodb-stream-router==0.0.9
