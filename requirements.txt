@@ -27,7 +27,7 @@ pycdlib==1.13.0
 pydantic==1.10.4
 python-multipart==0.0.5
 PyYAML==6.0
-requests==2.28.1
+requests==2.28.2
 requests-websub-auth==0.0.5
 s3transfer==0.6.0
 sly==0.5
