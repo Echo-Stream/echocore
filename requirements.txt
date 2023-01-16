@@ -23,7 +23,7 @@ jsonpickle==2.2.0
 lambda-pkg-resources==0.0.6
 mangum==0.17.0
 multipledispatch==0.6.0
-pycdlib==1.13.0
+pycdlib==1.14.0
 pydantic==1.10.4
 python-multipart==0.0.5
 PyYAML==6.0
