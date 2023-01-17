@@ -4,8 +4,8 @@ aws-error-utils==2.7.0
 aws-requests-auth==0.4.3
 awsserviceendpoints==0.0.2
 backoff==2.2.1
-boto3==1.26.49
-botocore==1.29.49
+boto3==1.26.50
+botocore==1.29.50
 Brotli==1.0.9
 cachetools==5.2.1
 certifi==2022.12.7
@@ -33,6 +33,7 @@ s3transfer==0.6.0
 sly==0.5
 sniffio==1.3.0
 starlette==0.22.0
+stripe==5.0.0
 toml==0.10.2
 typing_extensions==4.4.0
 ujson==5.7.0
