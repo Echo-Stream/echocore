@@ -36,6 +36,6 @@ starlette==0.22.0
 toml==0.10.2
 typing_extensions==4.4.0
 ujson==5.7.0
-watchtower==3.0.0
+watchtower==3.0.1
 wheel==0.38.4
 xmltodict==0.13.0
