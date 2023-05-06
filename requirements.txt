@@ -15,7 +15,7 @@ email-validator==2.0.0.post2
 extensible-locks==0.0.1
 fastapi==0.95.1
 fastjsonschema==2.16.3
-Files.com==1.0.935
+Files.com==1.0.936
 idna==3.4
 jsonpickle==3.0.1
 lambda-pkg-resources==0.0.6
