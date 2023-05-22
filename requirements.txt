@@ -14,7 +14,7 @@ dynamodb-stream-router==0.0.9
 email-validator==2.0.0.post2
 extensible-locks==0.0.1
 fastapi==0.95.2
-fastjsonschema==2.16.3
+fastjsonschema==2.17.1
 Files.com==1.0.937
 idna==3.4
 jsonpickle==3.0.1
