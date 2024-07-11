@@ -29,18 +29,19 @@ jobs:
         id: start-ec2-runner
         uses: machulav/ec2-github-runner@v2
         with:
-          mode: start
-          github-token: ${{ secrets.AWS_RUNNER_GITHUB_TOKEN }}
-          ec2-image-id: ${{ secrets.AWS_RUNNER_PYTHON_EC2_IMAGE_ID }}
-          ec2-instance-type: ${{ secrets.AWS_RUNNER_EC2_INSTANCE_TYPE }}
-          subnet-id: ${{ secrets.AWS_RUNNER_SUBNET_ID }}
-          security-group-id: ${{ secrets.AWS_RUNNER_SECURITY_GROUP_ID }}
-          iam-role-name: ${{ secrets.AWS_RUNNER_IAM_ROLE_NAME }}
           aws-resource-tags: >
             [
               {"Key": "Name", "Value": "github-python-runner"},
               {"Key": "GitHubRepository", "Value": "${{ github.repository }}"}
             ]
+          ec2-image-id: ${{ secrets.AWS_RUNNER_PYTHON_EC2_IMAGE_ID }}
+          ec2-instance-type: ${{ secrets.AWS_RUNNER_EC2_INSTANCE_TYPE }}
+          github-token: ${{ secrets.AWS_RUNNER_GITHUB_TOKEN }}
+          iam-role-name: ${{ secrets.AWS_RUNNER_IAM_ROLE_NAME }}
+          mode: start
+          runner-home-dir: ${{ vars.AWS_RUNNER_HOME_DIR }}
+          subnet-id: ${{ secrets.AWS_RUNNER_SUBNET_ID }}
+          security-group-id: ${{ secrets.AWS_RUNNER_SECURITY_GROUP_ID }}
   build:
     needs: start-runner
     runs-on: ${{ needs.start-runner.outputs.label }}
@@ -66,11 +67,11 @@ jobs:
       - name: Upload
         run: |
           mkdir python
-          pip3.9 install --no-cache-dir --disable-pip-version-check --no-deps -r requirements.txt -t python
+          pip3.12 install --no-cache-dir --disable-pip-version-check --no-deps -r requirements.txt -t python
           rm -rf python/multipart/tests python/sniffio/_tests
           zip -r echocore.zip python/
-          pip3.9 install --disable-pip-version-check boto3
-          python3.9 publish_layers.py
+          pip3.12 install --disable-pip-version-check boto3
+          python3.12 publish_layers.py
           aws s3 cp echocore.json s3://$ARTIFACTS_BUCKET/$VERSION/lambda/layer/ --sse
         if: ${{ success() }}
   stop-runner:
