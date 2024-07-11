@@ -7,7 +7,7 @@ on:
     paths-ignore:
       - '.gitignore'
       - 'README.md'
-      - 'dependabot.yml'
+      - '.github/dependabot.yml'
       - '.devcontainer/**'
   workflow_dispatch:
 
