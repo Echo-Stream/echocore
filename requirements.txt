@@ -7,7 +7,7 @@ backoff==2.2.1
 Brotli==1.0.9
 cachetools==5.3.1
 certifi==2023.7.22
-charset-normalizer==3.1.0
+charset-normalizer==3.3.2
 dnspython==2.3.0
 dynamic-function-loader==0.0.3
 dynamodb-stream-router==0.0.9
