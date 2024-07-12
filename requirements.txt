@@ -19,7 +19,6 @@ fastjsonschema==2.20.0
 Files.com==1.4.100
 idna==3.7
 jsonpickle==3.2.2
-lambda-pkg-resources==0.0.6
 mangum==0.17.0
 multipledispatch==1.0.0
 pycdlib==1.14.0
