@@ -68,7 +68,7 @@ jobs:
         run: |
           mkdir python
           pip3.12 install --no-cache-dir --disable-pip-version-check --no-deps -r requirements.txt -t python
-          rm -rf python/multipart/tests python/sniffio/_tests python/README.md
+          rm -rf python/multipart/tests python/sniffio/_tests python/README.md python/bin python/man
           zip -r echocore.zip python/
           pip3.12 install --disable-pip-version-check boto3
           python3.12 publish_layers.py
