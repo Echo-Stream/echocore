@@ -14,7 +14,7 @@ for region_name in ("us-east-1", "us-east-2", "us-west-1", "us-west-2"):
     lambda_client = boto3.client("lambda", region_name=region_name)
     response = lambda_client.publish_layer_version(
         CompatibleArchitectures=["x86_64"],
-        CompatibleRuntimes=["python3.9"],
+        CompatibleRuntimes=["python3.12"],
         Content=dict(ZipFile=echocore_zip),
         Description="Core Python packages for EchoStream lambda functions",
         LayerName=layer_name,
@@ -34,7 +34,8 @@ for region_name in ("us-east-1", "us-east-2", "us-west-1", "us-west-2"):
                 VersionNumber=response["Version"]-1,
             )
         except Exception:
-            print(f'WARNING: Unable to delete version {response["Version"]} for {layer_name}')
+            print(f'WARNING: Unable to delete version {
+                  response["Version"]} for {layer_name}')
     echocore_arns[region_name] = response["LayerVersionArn"]
 with open("echocore.json", "wt") as f:
     json.dump(echocore_arns, f, separators=(",", ":"))
