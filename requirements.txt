@@ -6,7 +6,7 @@ aws-requests-auth==0.4.3
 awsserviceendpoints==0.0.2
 backoff==2.2.1
 Brotli==1.1.0
-cachetools==5.3.3
+cachetools==5.4.0
 certifi==2024.7.4
 charset-normalizer==3.3.2
 dnspython==2.6.1
