@@ -6,7 +6,7 @@ aws-requests-auth==0.4.3
 awsserviceendpoints==0.0.2
 backoff==2.2.1
 Brotli==1.1.0
-cachetools==5.3.3
+cachetools==5.4.0
 certifi==2024.7.4
 charset-normalizer==3.3.2
 dnspython==2.6.1
@@ -16,7 +16,7 @@ email-validator==2.2.0
 extensible-locks==0.0.1
 fastapi-slim==0.111.1
 fastjsonschema==2.20.0
-Files.com==1.4.100
+Files.com==1.4.103
 idna==3.7
 jsonpickle==3.2.2
 mangum==0.17.0
