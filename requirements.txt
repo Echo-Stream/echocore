@@ -1,5 +1,5 @@
 annotated-types==0.7.0
-anyio==4.4.0
+anyio==4.6.0
 appsync-router==4.0.3
 aws-error-utils==2.7.0
 aws-requests-auth==0.4.3
