@@ -16,7 +16,7 @@ email-validator==2.2.0
 extensible-locks==0.0.1
 fastapi-slim==0.111.1
 fastjsonschema==2.20.0
-Files.com==1.4.104
+Files.com==1.4.136
 idna==3.7
 jsonpickle==3.2.2
 mangum==0.17.0
