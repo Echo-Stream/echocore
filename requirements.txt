@@ -37,4 +37,4 @@ toml==0.10.2
 typing_extensions==4.12.2
 ujson==5.10.0
 wheel==0.43.0
-xmltodict==0.13.0
+xmltodict==0.14.2
