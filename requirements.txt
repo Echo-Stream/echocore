@@ -18,7 +18,7 @@ fastapi-slim==0.111.1
 fastjsonschema==2.20.0
 Files.com==1.4.104
 idna==3.7
-jsonpickle==3.2.2
+jsonpickle==4.0.1
 mangum==0.17.0
 multipledispatch==1.0.0
 packaging==24.1
