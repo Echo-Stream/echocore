@@ -14,7 +14,7 @@ dynamic-function-loader==0.0.3
 dynamodb-stream-router==0.0.9
 email-validator==2.2.0
 extensible-locks==0.0.1
-fastapi-slim==0.115.8
+fastapi-slim==0.115.11
 fastjsonschema==2.21.1
 Files.com==1.4.217
 idna==3.10
