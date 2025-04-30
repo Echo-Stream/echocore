@@ -23,7 +23,7 @@ mangum==0.19.0
 multipledispatch==1.0.0
 packaging==24.2
 pycdlib==1.14.0
-pydantic==2.10.6
+pydantic==2.11.4
 pydantic-core==2.27.2
 python-multipart==0.0.20
 PyYAML==6.0.2
